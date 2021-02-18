@@ -100,6 +100,8 @@ const decode = str => {
         p[key] = []
       else if (!Array.isArray(p[key]))
         p[key] = [p[key]]
+    } else if (hasOwnProperty.call(p, key) && !Array.isArray(p[key])) {
+      p[key] = [p[key]]
     }
 
     // safeguard against resetting a previously defined
